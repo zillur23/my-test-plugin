@@ -33,3 +33,4 @@
  }
 
  add_action('init','mtp_slider');
+
