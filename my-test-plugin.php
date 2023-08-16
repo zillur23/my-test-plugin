@@ -152,15 +152,16 @@ add_shortcode('boxed','box');
 
 // Style inquee for forever
 function my_enqueue_spripts(){
-    global $post;
-    $has_shortcode = has_shortcode($post->post_content,'cta') || has_shortcode($post->post_content, 'boxed');
+    // global $post;
+    // $has_shortcode = has_shortcode($post->post_content,'cta') || has_shortcode($post->post_content, 'boxed');
 
-    if(is_a($post, 'WP_Post') && $has_shortcode){
+    // if(is_a($post, 'WP_Post') && $has_shortcode){
         wp_register_style('my-stylesheet', plugin_dir_url(__FILE__). 'css/style.css');
         wp_enqueue_style('my-stylesheet');
-    }
+        wp_enqueue_script('my-script', plugin_dir_url(__FILE__). 'js/script.js', 'v1.0.0');
+    // }
 
 }
 
-add_action('wp_enqueue_scripts','my_enqueue_scripts');
+add_action('wp_enqueue_scripts','my_enqueue_spripts');
 
